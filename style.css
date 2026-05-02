@@ -1802,12 +1802,18 @@ a {
     text-align: center
 }
 
-/* Authors row */
+/* Authors row - always side by side */
 .authors-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 24px
+}
+
+.authors-row .author-card {
+    flex: 0 0 auto;
+    width: auto;
+    float: none
 }
 
 /* Large screens (desktop) - 993px and above */
@@ -1868,9 +1874,9 @@ a {
     }
 
     .authors-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px
+        flex-direction: row;
+        justify-content: center;
+        gap: 12px
     }
 
     /* Adjust padding for mobile */
