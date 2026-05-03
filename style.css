@@ -1871,6 +1871,11 @@ a {
 
 /* Small screens (mobile phones) - 600px and below */
 @media (max-width: 600px) {
+    /* Hide top navigation bar on mobile */
+    .w3-top {
+        display: none
+    }
+
     .responsive-content {
         max-width: 100%;
         width: 95%;
