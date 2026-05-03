@@ -1798,8 +1798,8 @@ a {
 
 /* Author images - squared frame */
 .author-img-square {
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     border-radius: 8px;
     border: 2px solid #ddd
@@ -1842,8 +1842,8 @@ a {
     }
 
     .author-img-square {
-        width: 220px;
-        height: 220px
+        width: 260px;
+        height: 260px
     }
 }
 
@@ -1864,8 +1864,8 @@ a {
     }
 
     .author-img-square {
-        width: 200px;
-        height: 200px
+        width: 240px;
+        height: 240px
     }
 }
 
@@ -1893,8 +1893,8 @@ a {
     }
 
     .author-img-square {
-        width: 150px;
-        height: 150px
+        width: 180px;
+        height: 180px
     }
 
     .author-card {
@@ -1947,8 +1947,8 @@ a {
     }
 
     .author-img-square {
-        width: 120px;
-        height: 120px
+        width: 140px;
+        height: 140px
     }
 
     h2 {
