@@ -1796,6 +1796,15 @@ a {
     border-radius: 50%
 }
 
+/* Author images - squared frame */
+.author-img-square {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #ddd
+}
+
 /* Author card styling */
 .author-card {
     padding: 16px;
@@ -1831,6 +1840,11 @@ a {
         width: 150px;
         height: 150px
     }
+
+    .author-img-square {
+        width: 150px;
+        height: 150px
+    }
 }
 
 /* Medium screens (tablets) - 601px to 992px */
@@ -1845,6 +1859,11 @@ a {
     }
 
     .author-img {
+        width: 130px;
+        height: 130px
+    }
+
+    .author-img-square {
         width: 130px;
         height: 130px
     }
@@ -1864,6 +1883,11 @@ a {
     }
 
     .author-img {
+        width: 100px;
+        height: 100px
+    }
+
+    .author-img-square {
         width: 100px;
         height: 100px
     }
@@ -1913,6 +1937,11 @@ a {
     }
 
     .author-img {
+        width: 80px;
+        height: 80px
+    }
+
+    .author-img-square {
         width: 80px;
         height: 80px
     }
