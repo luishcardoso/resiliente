@@ -1788,6 +1788,15 @@ a {
     border-radius: 12px
 }
 
+/* Header logo - responsive */
+.header-logo {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 32px auto;
+    display: block
+}
+
 /* Author images */
 .author-img {
     width: 120px;
@@ -1845,6 +1854,10 @@ a {
         width: 260px;
         height: 260px
     }
+
+    .header-logo {
+        max-width: 450px
+    }
 }
 
 /* Medium screens (tablets) - 601px to 992px */
@@ -1866,6 +1879,10 @@ a {
     .author-img-square {
         width: 240px;
         height: 240px
+    }
+
+    .header-logo {
+        max-width: 350px
     }
 }
 
@@ -1895,6 +1912,11 @@ a {
     .author-img-square {
         width: 180px;
         height: 180px
+    }
+
+    .header-logo {
+        max-width: 280px;
+        margin-bottom: 24px
     }
 
     .author-card {
@@ -1949,6 +1971,11 @@ a {
     .author-img-square {
         width: 140px;
         height: 140px
+    }
+
+    .header-logo {
+        max-width: 220px;
+        margin-bottom: 20px
     }
 
     h2 {
