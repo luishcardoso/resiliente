@@ -1,232 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-<title>RESILIENTE</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body {font-family: "Lato", sans-serif; background-color: #fafafa}
-.mySlides {display: none}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RESILIENTE - Projeto musical autoral de Nenizera e Augusto Haack. Hardcore, thrash metal e ritmos brasileiros do Vale dos Sinos/RS, Brasil.">
+  <meta name="author" content="Nenizera, Augusto Haack">
+  <title>RESILIENTE | Música Autoral</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body { font-family: "Lato", sans-serif; background-color: #fafafa; }
+  </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-   <!-- <a href="#PREFÁCIO" class="w3-bar-item w3-button w3-padding-large">INÍCIO</a>-->
-    <a href="#PREFÁCIO" class="w3-bar-item w3-button w3-padding-large w3-hide-small">INÍCIO</a>
-    <a href="#MÚSICA" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MÚSICA</a>
-    <!--<a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTATO</a>-->
-    <!--<div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MAIS<i class="fa fa-caret-down"></i></button>     
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Merch</a>
-        <a href="#" class="w3-bar-item w3-button">Extra</a>
-        <a href="#" class="w3-bar-item w3-button">Mídia</a>
-      </div>
-    </div>-->
-   <!--<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>-->
-    <a href="https://music.apple.com/pt/album/resiliente-ep/1789177633" style="text-decoration:none" target="_blank" class="w3-padding-large w3-hover-opacity w3-hide-small w3-right"><i class="fa fa-apple"></i></a>
-    <a href="https://music.amazon.com/albums/B0DSGJH6NH?ref=dm_ff_amazonmusic.3p&tag=featurefm-20" style="text-decoration:none" target="_blank" class="w3-padding-large w3-hover-opacity w3-hide-small w3-right"><i class="fa fa-amazon"></i></a>
-    <a href="https://open.spotify.com/artist/5VypUTnqvJnqwon11m5ZgH" style="text-decoration:none" target="_blank" class="w3-padding-large w3-hover-opacity w3-hide-small w3-right"><i class="fa fa-spotify"></i></a>
-    <!--<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-instagram"></i></a>-->
-    <!--<a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-facebook-official"></i></a>-->
-  </div>
-</div>
+<header class="w3-top">
+  <nav class="w3-bar w3-black w3-card" aria-label="Navegação principal">
+    <button class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" 
+            onclick="toggleNav()" 
+            aria-expanded="false" 
+            aria-controls="navDemo"
+            aria-label="Abrir menu de navegação">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
 
-<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium" style="margin-top:46px">
-  <!--<<a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">INÍCIO</a>-->
-  <a href="#PREFÁCIO" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">INÍCIO</a>
-  <a href="#MÚSICA" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MÚSICA</a>
-  <!--<<a href="#MERCH" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>-->
-</div>
+    <a href="#sobre" class="w3-bar-item w3-button w3-padding-large w3-hide-small">INÍCIO</a>
+    <a href="#musica" class="w3-bar-item w3-button w3-padding-large w3-hide-small">MÚSICA</a>
 
-<!-- INÍCIO -->
+    <a href="https://music.apple.com/pt/album/resiliente-ep/1789177633" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="w3-padding-large w3-hover-opacity w3-hide-small w3-right"
+       aria-label="Ouvir no Apple Music">
+      <i class="fa fa-apple" aria-hidden="true"></i>
+    </a>
+    <a href="https://music.amazon.com/albums/B0DSGJH6NH" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="w3-padding-large w3-hover-opacity w3-hide-small w3-right"
+       aria-label="Ouvir na Amazon Music">
+      <i class="fa fa-amazon" aria-hidden="true"></i>
+    </a>
+    <a href="https://open.spotify.com/artist/5VypUTnqvJnqwon11m5ZgH" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="w3-padding-large w3-hover-opacity w3-hide-small w3-right"
+       aria-label="Ouvir no Spotify">
+      <i class="fa fa-spotify" aria-hidden="true"></i>
+    </a>
+  </nav>
 
+  <nav id="navDemo" 
+       class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium" 
+       style="margin-top:46px"
+       aria-label="Navegação mobile">
+    <a href="#sobre" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">INÍCIO</a>
+    <a href="#musica" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">MÚSICA</a>
+  </nav>
+</header>
 
-  <!-- PREFÁCIO -->
-  <div class="w3-container w3-content w3-center w3-padding-64 responsive-content" id="PREFÁCIO">
-    <a href="https://instagram.com/resiliente.banda" target="_blank"><img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/resiliente.png" alt="Resiliente" class="header-logo"></a>
-    <p class="w3-justify"><a href="https://instagram.com/resiliente.banda" target="_blank" style="text-decoration:none; color:inherit"><b>RESILIENTE</b></a> é um projeto idealizado por <a href="https://instagram.com/nenizera" target="_blank" style="text-decoration:none; color:inherit"><b>Nenizera</b></a> e <a href="https://instagram.com/augusto.haack" target="_blank" style="text-decoration:none; color:inherit"><b>Augusto Haack</b></a> em 2017 no Vale dos Sinos/RS, Brasil. Dois amigos que se reuniram para produzir música autoral e independente. A banda nasceu da troca de ideias espontânea em longas noites de <a href="https://en.wikipedia.org/wiki/International_Superstar_Soccer_Deluxe" target="_blank" style="text-decoration:none; color:inherit"><b>International Superstar Soccer Deluxe</b></a> ao som de hardcore. Resiliente é a comunhão de sentimentos genuínos, experiências individuais e emoções universais. Suas músicas refletem principalmente sobre a condição humana, com autocrítica e empatia. Em sua sonoridade destaca-se o crossover entre ritmos brasileiros, hardcore e thrash metal. Após o lançamento do seu EP homônimo de estréia em 2025, a banda apresenta um som cru e intimista, caracterizado por riffs marcantes nas guitarras, breakdowns apocalípticos e vozes viscerais. Resiliente é um convite a reflexão e despertar individual; Um lembrete de que mesmo nos momentos mais difíceis de nossas vidas, a esperança pode ser sempre cultivada.</p>
-    <p class="w3-opacity"><I>Só e perante ao sol...</I></p>
-    <p class="w3-justify">Nossas experiências individuais são únicas, nossas emoções são universais. Perante a inevitabilidade do sofrimento nesse mundo muitas vezes ferido, nosso coração tem uma voz, e a música é um método pelo qual essa voz se manifesta.</p>
-    <p class="w3-opacity"><I>Em nossas mãos o sangue do amanhã!</I></p>
-    <p class="w3-justify">Uma janela para a alma, revelando fragilidades e conquistas, medos e renascimentos, em um movimento constante de aprendizado e redenção. Uma jornada íntima e honesta, tecida por sentimentos que comunicam os altos e baixos do cotidiano, a resiliência diante das adversidades, e a força de vontade necessária para seguir em frente.</p>
-    <p class="w3-opacity"><I>...em repúdio aos mesmos erros, repensei.</I></p>
+<main>
+  <section id="sobre" class="w3-container w3-content w3-center w3-padding-64 responsive-content" aria-labelledby="sobre-heading">
+    <a href="https://instagram.com/resiliente.banda" target="_blank" rel="noopener noreferrer">
+      <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/resiliente.png" 
+           alt="Logo da banda Resiliente" 
+           class="header-logo">
+    </a>
+    
+    <h1 id="sobre-heading" class="visually-hidden">Sobre a banda Resiliente</h1>
 
-    <!-- AUTORES -->
-    <div class="w3-row authors-row" style="margin-top:48px; margin-bottom:48px">
-      <div class="w3-col s12 m6 l6 author-card">
-        <p class="w3-opacity"><a href="https://instagram.com/nenizera" target="_blank" style="text-decoration:none; color:inherit">NENIZERA</a></p>
-        <a href="https://instagram.com/nenizera" target="_blank"><img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/nenizera.jpg" class="author-img-square" alt="Nenizera"></a>
-      </div>
-      <div class="w3-col s12 m6 l6 author-card">
-        <p class="w3-opacity"><a href="https://instagram.com/augustohaack" target="_blank" style="text-decoration:none; color:inherit">AUGUSTO HAACK</a></p>
-        <a href="https://instagram.com/augustohaack" target="_blank"><img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/augusto.jpeg" class="author-img-square" alt="Augusto Haack"></a>
-      </div>
+    <p class="w3-justify">
+      <a href="https://instagram.com/resiliente.banda" target="_blank" rel="noopener noreferrer" class="text-link"><strong>RESILIENTE</strong></a> 
+      é um projeto idealizado por 
+      <a href="https://instagram.com/nenizera" target="_blank" rel="noopener noreferrer" class="text-link"><strong>Nenizera</strong></a> e 
+      <a href="https://instagram.com/augusto.haack" target="_blank" rel="noopener noreferrer" class="text-link"><strong>Augusto Haack</strong></a> 
+      em 2017 no Vale dos Sinos/RS, Brasil. Dois amigos que se reuniram para produzir música autoral e independente. 
+      A banda nasceu da troca de ideias espontânea em longas noites de 
+      <a href="https://en.wikipedia.org/wiki/International_Superstar_Soccer_Deluxe" target="_blank" rel="noopener noreferrer" class="text-link"><strong>International Superstar Soccer Deluxe</strong></a> 
+      ao som de hardcore. Resiliente é a comunhão de sentimentos genuínos, experiências individuais e emoções universais. 
+      Suas músicas refletem principalmente sobre a condição humana, com autocrítica e empatia. 
+      Em sua sonoridade destaca-se o crossover entre ritmos brasileiros, hardcore e thrash metal. 
+      Após o lançamento do seu EP homônimo de estréia em 2025, a banda apresenta um som cru e intimista, 
+      caracterizado por riffs marcantes nas guitarras, breakdowns apocalípticos e vozes viscerais. 
+      Resiliente é um convite a reflexão e despertar individual; Um lembrete de que mesmo nos momentos mais difíceis de nossas vidas, 
+      a esperança pode ser sempre cultivada.
+    </p>
+
+    <blockquote class="w3-opacity"><em>Só e perante ao sol...</em></blockquote>
+
+    <p class="w3-justify">
+      Nossas experiências individuais são únicas, nossas emoções são universais. 
+      Perante a inevitabilidade do sofrimento nesse mundo muitas vezes ferido, 
+      nosso coração tem uma voz, e a música é um método pelo qual essa voz se manifesta.
+    </p>
+
+    <blockquote class="w3-opacity"><em>Em nossas mãos o sangue do amanhã!</em></blockquote>
+
+    <p class="w3-justify">
+      Uma janela para a alma, revelando fragilidades e conquistas, medos e renascimentos, 
+      em um movimento constante de aprendizado e redenção. Uma jornada íntima e honesta, 
+      tecida por sentimentos que comunicam os altos e baixos do cotidiano, 
+      a resiliência diante das adversidades, e a força de vontade necessária para seguir em frente.
+    </p>
+
+    <blockquote class="w3-opacity"><em>...em repúdio aos mesmos erros, repensei.</em></blockquote>
+
+    <section class="w3-row authors-row" style="margin-top:48px; margin-bottom:48px" aria-labelledby="membros-heading">
+      <h2 id="membros-heading" class="visually-hidden">Membros da banda</h2>
+      
+      <article class="w3-col s12 m6 l6 author-card">
+        <h3 class="w3-opacity">
+          <a href="https://instagram.com/nenizera" target="_blank" rel="noopener noreferrer" class="text-link">NENIZERA</a>
+        </h3>
+        <a href="https://instagram.com/nenizera" target="_blank" rel="noopener noreferrer">
+          <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/nenizera.jpg" 
+               class="author-img-square" 
+               alt="Foto de Nenizera">
+        </a>
+      </article>
+
+      <article class="w3-col s12 m6 l6 author-card">
+        <h3 class="w3-opacity">
+          <a href="https://instagram.com/augustohaack" target="_blank" rel="noopener noreferrer" class="text-link">AUGUSTO HAACK</a>
+        </h3>
+        <a href="https://instagram.com/augustohaack" target="_blank" rel="noopener noreferrer">
+          <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/augusto.jpeg" 
+               class="author-img-square" 
+               alt="Foto de Augusto Haack">
+        </a>
+      </article>
+    </section>
+  </section>
+
+  <section id="musica" class="w3-container w3-content responsive-content" aria-labelledby="musica-heading">
+    <h2 id="musica-heading" class="w3-opacity w3-center">EP • RESILIENTE</h2>
+
+    <div class="w3-margin-bottom w3-center">
+      <iframe 
+        class="responsive-iframe"
+        src="https://onerpm.link/623153449389" 
+        width="100%" 
+        frameborder="0" 
+        allow="autoplay; clipboard-write; encrypted-media" 
+        allowfullscreen
+        title="Player do EP Resiliente">
+      </iframe>
     </div>
-  </div>
+  </section>
+</main>
 
-  <!-- MÚSICA -->
-  <div id="MÚSICA">
-    <div class="w3-container w3-content responsive-content">
-      <p class="w3-opacity w3-center">EP • RESILIENTE</p><br>
-
-      <!--<ul class="w3-ul w3-border w3-white w3-text-grey">
-        <li class="w3-padding">September <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
-        <li class="w3-padding">October <span class="w3-tag w3-red w3-margin-left">Sold out</span></li>
-        <li class="w3-padding">November <span class="w3-badge w3-right w3-margin-right">3</span></li>
-      </ul>-->
-
-       <!--<div class="w3-row-padding w3-padding-64">-->
-         <!--<div class="w1-third w3-margin-bottom w3-center">-->
-          <!--<img src="/w3images/newyork.jpg" alt="New York" style="width:100%" class="w3-hover-opacity">-->
-          <!--<iframe style="border-radius:12px"  width="75%" height="350" src="https://www.youtube.com/embed/rptwaR8JiX4?si=HY4K33xxwvpf2nzX" title="YouTube video player" frameborder="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
-          <!--<div class="w3-container w3-white">-->
-            <!--<p><b>Neni Talk</b></p>
-            <p class="w3-opacity">Podcast</p>
-            <p>Mensagem aleatória aqui.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>
-          </div>-->
-       <!-- </div>-->
-        <div class="w3-margin-bottom w3-center">
-          <!--<img src="/w3images/paris.jpg" alt="Paris" style="width:100%" class="w3-hover-opacity">-->
-          <!--<iframe style="border-radius:auto" width="100%" height="450" src="https://open.spotify.com/embed/album/2ODvWsOgouMbaA5xf0RkJe?utm_source=generator" frameBorder="no" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>-->
-          <iframe 
-           class="responsive-iframe"
-           src="https://onerpm.link/623153449389" 
-           width="100%" 
-           frameborder="0" 
-           allow="autoplay; clipboard-write; encrypted-media" 
-           allowfullscreen>
-          </iframe>
-
-            <!--<p><b>Paris</b></p>
-            <p class="w3-opacity">Sat 28 Nov 2016</p>
-            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>-->
-          <!--</div>-->
-        </div>
-         <!--<div class="w1-third w3-margin-bottom w3-center">-->
-          <!--<img src="/w3images/sanfran.jpg" alt="San Francisco" style="width:100%" class="w3-hover-opacity">-->
-          <!--<iframe width="75%" height="350" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1946825363&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="border-radius:12px; font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ca-hed-cobraz" title="hi-c" target="_blank" style="color: #cccccc; text-decoration: none;">hi-c</a> · <a href="https://soundcloud.com/ca-hed-cobraz/h3ll-c4t-d0dg3-prod-kyuro-x-1sadboii" title="H3lL C4t D0dG3 (prod. kyuro x 1sadboii)" target="_blank" style="color: #cccccc; text-decoration: none;">H3lL C4t D0dG3 (prod. kyuro x 1sadboii)</a></div>-->
-          <!--<div class="w3-container w3-white">-->
-            <!--<p><b>San Francisco</b></p>
-            <p class="w3-opacity">Sun 29 Nov 2016</p>
-            <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-            <button class="w3-button w3-black w3-margin-bottom" onclick="document.getElementById('ticketModal').style.display='block'">Buy Tickets</button>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  </div>
-
-  <!-- Ticket Modal -->
- <!--<div id="ticketModal" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-teal w3-center w3-padding-32"> 
-        <span onclick="document.getElementById('ticketModal').style.display='none'" 
-       class="w3-button w3-teal w3-xlarge w3-display-topright">×</span>
-        <h2 class="w3-wide"><i class="fa fa-suitcase w3-margin-right"></i>Tickets</h2>
-      </header>
-      <div class="w3-container">
-        <p><label><i class="fa fa-shopping-cart"></i> Tickets, $15 per person</label></p>
-        <input class="w3-input w3-border" type="text" placeholder="How many?">
-        <p><label><i class="fa fa-user"></i> Send To</label></p>
-        <input class="w3-input w3-border" type="text" placeholder="Enter email">
-        <button class="w3-button w3-block w3-teal w3-padding-16 w3-section w3-right">PAY <i class="fa fa-check"></i></button>
-        <button class="w3-button w3-red w3-section" onclick="document.getElementById('ticketModal').style.display='none'">Close <i class="fa fa-remove"></i></button>
-        <p class="w3-right">Need <a href="#" class="w3-text-blue">help?</a></p>
-      </div>
-    </div>
-  </div>-->
-
-  <!-- The Contact Section 
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">CONTATO</h2>
-    <p class="w3-opacity w3-center"><i>Fale conosco!</i></p>
-    <div class="w3-row w3-padding-32">
-      <div class="w3-col m6 w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker" style="width:30px"></i> Lisboa, PT<br>
-        <i class="fa fa-phone" style="width:30px"></i> Fone: +00 151515<br>
-        <i class="fa fa-envelope" style="width:30px"> </i> Email: resiliente@nenizera.com<br>
-      </div>
-      <div class="w3-col m6">
-        <form action="/action_page.php" target="_blank">
-          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Nome" required name="Nome">
-            </div>
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-            </div>
-          </div>
-          <input class="w3-input w3-border" type="text" placeholder="Mensagem" required name="Mensagem">
-          <button class="w3-button w3-black w3-section w3-right" type="submit">ENVIAR</button>
-        </form>
-      </div>
-    </div>
-  </div> -->
-  
-<!-- End Page Content -->
-</div>
-
-<!-- Image of location/map -->
-<!-- <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">-->
-
-<!-- Footer -->
 <footer class="w3-container w3-padding-16 w3-center w3-black">
-  <a class="fa fa-spotify w3-hover-opacity" href="https://open.spotify.com/artist/5VypUTnqvJnqwon11m5ZgH" style="text-decoration:none" target="_blank"></a>
-  <a class="fa fa-amazon w3-hover-opacity" href="https://music.amazon.com/albums/B0DSGJH6NH?ref=dm_ff_amazonmusic.3p&tag=featurefm-20" style="text-decoration:none" target="_blank"></a> 
-  <a class="fa fa-apple w3-hover-opacity" href="https://music.apple.com/pt/album/resiliente-ep/1789177633" style="text-decoration:none" target="_blank"></a> 
-  <!--<i class="fa fa-instagram w3-hover-opacity"></i>-->
-  <!--<i class="fa fa-facebook-official w3-hover-opacity"></i>-->
-  <!-- <i class="fa fa-pinterest-p w3-hover-opacity"></i> -->
-  <!-- <i class="fa fa-twitter w3-hover-opacity"></i> -->
-  <!-- <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-   <!--<p class="w3-medium"><a href="https://nenizera.com" target="_blank">nenizera.com</a></p>-->
+  <nav aria-label="Redes sociais">
+    <a href="https://open.spotify.com/artist/5VypUTnqvJnqwon11m5ZgH" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fa fa-spotify w3-hover-opacity"
+       aria-label="Spotify"></a>
+    <a href="https://music.amazon.com/albums/B0DSGJH6NH" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fa fa-amazon w3-hover-opacity"
+       aria-label="Amazon Music"></a>
+    <a href="https://music.apple.com/pt/album/resiliente-ep/1789177633" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fa fa-apple w3-hover-opacity"
+       aria-label="Apple Music"></a>
+  </nav>
+  <small>&copy; 2025 Resiliente</small>
 </footer>
 
 <script>
-// Automatic Slideshow - change image every 10 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 10000);    
-}
-
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// When the user clicks anywhere outside of the modal, close it
-var modal = document.getElementById('ticketModal');
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+function toggleNav() {
+  const nav = document.getElementById("navDemo");
+  const button = document.querySelector("[aria-controls='navDemo']");
+  const isExpanded = nav.classList.toggle("w3-show");
+  button.setAttribute("aria-expanded", isExpanded);
 }
 </script>
 
