@@ -1844,6 +1844,11 @@ a {
     font-size: 20px
 }
 
+/* EP cover image */
+.responsive-img {
+    max-width: 320px
+}
+
 /* Large screens (desktop) - 993px and above */
 @media (min-width: 993px) {
     .responsive-content {
