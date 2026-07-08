@@ -1834,6 +1834,16 @@ a {
     float: none
 }
 
+/* Author names and EP heading - smaller text */
+.author-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px
+}
+
+#musica-heading {
+    font-size: 20px
+}
+
 /* Large screens (desktop) - 993px and above */
 @media (min-width: 993px) {
     .responsive-content {
