@@ -1846,7 +1846,9 @@ a {
 
 /* EP cover image */
 .responsive-img {
-    max-width: 320px
+    max-width: 260px;
+    border-radius: 8px;
+    border: 2px solid #ddd
 }
 
 /* Large screens (desktop) - 993px and above */
