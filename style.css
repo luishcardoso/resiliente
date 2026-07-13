@@ -1811,13 +1811,26 @@ a {
     height: 220px;
     object-fit: cover;
     border-radius: 8px;
-    border: 2px solid #ddd
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease
+}
+
+.author-img-square:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5)
 }
 
 /* Author card styling */
 .author-card {
     padding: 16px;
-    text-align: center
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px
+}
+
+.author-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
 }
 
 /* Authors row - always side by side */
@@ -1848,7 +1861,13 @@ a {
 .responsive-img {
     max-width: 260px;
     border-radius: 8px;
-    border: 2px solid #ddd
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease
+}
+
+.responsive-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5)
 }
 
 /* Large screens (desktop) - 993px and above */
