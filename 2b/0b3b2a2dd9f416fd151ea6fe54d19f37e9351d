@@ -1,0 +1,19 @@
+.wrangler/cache/pages.json
+  s_d48f2b2afd179d::t_2ee3b7f1551ad1 1-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "2b0b3b2a2dd9f416fd151ea6fe54d19f37e9351d",
+  "prompts": {},
+  "sessions": {
+    "s_d48f2b2afd179d": {
+      "agent_id": {
+        "tool": "windsurf",
+        "id": "59d72fa8-3418-4b6f-8068-5f8383637da3",
+        "model": "Claude Opus 4.5 Thinking"
+      },
+      "human_author": "lcardoso <lcardoso@cloudflare.com>"
+    }
+  }
+}
