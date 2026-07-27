@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RESILIENTE - Biografia da banda de hardcore, thrash metal e ritmos brasileiros do Vale dos Sinos/RS, Brasil.">
+  <meta name="description" content="RESILIENTE - Loja oficial da banda de hardcore, thrash metal e ritmos brasileiros do Vale dos Sinos/RS, Brasil.">
   <meta name="author" content="Nenizera, Augusto Haack">
-  <title>BIOGRAFIA | RESILIENTE</title>
+  <title>LOJA | RESILIENTE</title>
   <link rel="icon" type="image/png" href="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/MONOGRAMA.png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap">
@@ -41,9 +41,43 @@
       background-color: transparent !important;
       color: #f5f5f5 !important;
     }
-    blockquote {
-      font-style: italic;
-      color: #b0b0b0;
+
+    /* Hero video container - Sepultura style */
+    .video-hero {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-hero video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Video overlay gradient */
+    .video-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(to top, rgba(18, 18, 18, 0.8), transparent);
+      pointer-events: none;
+    }
+
+    /* Responsive video */
+    @media (max-width: 600px) {
+      .video-hero {
+        border-radius: 0;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -93,61 +127,27 @@
        aria-label="Navegação mobile">
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">RESILIENTE</a>
     <a href="biografia.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">BIOGRAFIA</a>
-    <a href="loja.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">LOJA</a>
     <a href="discografia.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">DISCOGRAFIA</a>
+    <a href="loja.html" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">LOJA</a>
   </nav>
 </header>
 
 <main>
-  <section id="biografia" class="w3-container w3-content w3-center w3-padding-64 responsive-content" aria-labelledby="biografia-heading">
+  <section id="loja" class="w3-container w3-content w3-center w3-padding-64 responsive-content" aria-labelledby="loja-heading">
     <a href="https://instagram.com/resiliente.banda" target="_blank" rel="noopener noreferrer">
       <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/EP1_logo.png" 
            alt="Logo da banda Resiliente" 
            class="header-logo">
     </a>
 
-    <h1 id="biografia-heading" class="visually-hidden">Biografia</h1>
+    <h1 id="loja-heading" class="visually-hidden">Loja</h1>
 
-    <p class="w3-justify">
-      <a href="https://instagram.com/resiliente.banda" target="_blank" rel="noopener noreferrer" class="text-link"><strong>RESILIENTE</strong></a> 
-      é um projeto idealizado por 
-      <a href="https://instagram.com/nenizera" target="_blank" rel="noopener noreferrer" class="text-link"><strong>Nenizera</strong></a> e 
-      <a href="https://instagram.com/augusto.haack" target="_blank" rel="noopener noreferrer" class="text-link"><strong>Augusto Haack</strong></a> 
-      em 2017 no Vale dos Sinos/RS, Brasil. Dois amigos que se reuniram para produzir música autoral e independente. 
-      A banda nasceu da troca de ideias espontânea em longas noites de 
-      <a href="https://en.wikipedia.org/wiki/International_Superstar_Soccer_Deluxe" target="_blank" rel="noopener noreferrer" class="text-link"><strong>International Superstar Soccer Deluxe</strong></a> 
-      ao som de hardcore. Resiliente é a comunhão de sentimentos genuínos, experiências individuais e emoções universais. 
-      Suas músicas refletem principalmente sobre a condição humana, com autocrítica e empatia. 
-      Em sua sonoridade destaca-se o crossover entre ritmos brasileiros, hardcore e thrash metal. 
-      Após o lançamento do seu EP homônimo de estréia em 2025, a banda apresenta um som cru e intimista, 
-      caracterizado por riffs marcantes nas guitarras, breakdowns apocalípticos e vozes viscerais. 
-      Resiliente é um convite a reflexão e despertar individual; Um lembrete de que mesmo nos momentos mais difíceis de nossas vidas, 
-      a esperança pode ser sempre cultivada.
-    </p>
-
-    <section class="w3-row authors-row" style="margin-top:0; margin-bottom:0">
-      <article class="w3-col s12 m6 l6 author-card">
-        <h3 class="w3-opacity">
-          <a href="https://instagram.com/augustohaack" target="_blank" rel="noopener noreferrer" class="text-link">AUGUSTO HAACK</a>
-        </h3>
-        <a href="https://instagram.com/augustohaack" target="_blank" rel="noopener noreferrer">
-          <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/augusto.jpeg" 
-               class="author-img-square" 
-               alt="Foto de Augusto Haack">
-        </a>
-      </article>
-
-      <article class="w3-col s12 m6 l6 author-card">
-        <h3 class="w3-opacity">
-          <a href="https://instagram.com/nenizera" target="_blank" rel="noopener noreferrer" class="text-link">NENIZERA</a>
-        </h3>
-        <a href="https://instagram.com/nenizera" target="_blank" rel="noopener noreferrer">
-          <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/nenizera.jpg" 
-               class="author-img-square" 
-               alt="Foto de Nenizera">
-        </a>
-      </article>
-    </section>
+    <div class="video-hero">
+      <video autoplay muted loop playsinline>
+        <source src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/video.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </div>
   </section>
 </main>
 
