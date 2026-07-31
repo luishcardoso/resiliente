@@ -1,0 +1,33 @@
+biografia-en.html
+  s_e455a1cbbd5a81::t_e5144aa17cff49 74-95,99-100,109,113-114
+biografia.html
+  s_e455a1cbbd5a81::t_1c5109033a9b83 74-95,99-100,109,113-114
+discografia-en.html
+  s_e455a1cbbd5a81::t_be9d68e633af41 74-95,99-100,109,113-114
+discografia.html
+  s_e455a1cbbd5a81::t_19f29efb12b555 74-95,99-100,109,113-114
+index-en.html
+  s_e455a1cbbd5a81::t_eb4f272a0007d9 74-95,99-100,109,113-114
+index.html
+  s_e455a1cbbd5a81::t_e61f432d6bd326 74-95,99-100,109,113-114
+loja-en.html
+  s_e455a1cbbd5a81::t_74fd8d3c654a48 108-129,133-134,143,147-148
+loja.html
+  s_e455a1cbbd5a81::t_e99e7bebedcde7 108-129,133-134,143,147-148
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "1e9d2a861e15c8f259c862931bdb36f7fea66258",
+  "prompts": {},
+  "sessions": {
+    "s_e455a1cbbd5a81": {
+      "agent_id": {
+        "tool": "windsurf",
+        "id": "rotating-geometry",
+        "model": "unknown"
+      },
+      "human_author": "lcardoso <lcardoso@cloudflare.com>"
+    }
+  }
+}
