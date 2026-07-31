@@ -507,7 +507,18 @@ a {
 
 .w3-bar {
     width: 100%;
-    overflow: hidden
+    overflow: hidden;
+    position: relative
+}
+
+/* Streaming icons centered in the navbar */
+.nav-social-icons {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center
 }
 
 .w3-center .w3-bar {
@@ -1614,6 +1625,7 @@ a {
 /* Language Switcher */
 .lang-switcher {
     display: flex;
+    float: right;
     align-items: center;
     padding: 0 12px;
     font-size: 13px;
