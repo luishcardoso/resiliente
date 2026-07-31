@@ -518,7 +518,12 @@ a {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    align-items: center
+    align-items: center;
+    gap: 2px
+}
+
+.nav-social-icons a {
+    padding: 8px 6px!important
 }
 
 .w3-center .w3-bar {
