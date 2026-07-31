@@ -1988,13 +1988,22 @@ a {
 
     .author-card {
         padding: 12px;
-        margin-bottom: 16px
+        margin-bottom: 4px
     }
 
     .authors-row {
         flex-direction: row;
         justify-content: center;
         gap: 12px
+    }
+
+    /* Tighten the gap between the author cards and the next card (EP) on mobile */
+    #resiliente {
+        padding-bottom: 8px!important
+    }
+
+    #resiliente + #discografia {
+        padding-top: 24px!important
     }
 
     /* Adjust padding for mobile - top padding must clear the fixed header (~46-50px) */
@@ -2016,6 +2025,26 @@ a {
     footer .fa {
         font-size: 20px;
         margin: 0 8px
+    }
+
+    /* Compact mobile dropdown menu, anchored to the top-right under the hamburger button */
+    #navDemo {
+        position: absolute;
+        top: 46px!important;
+        right: 8px;
+        left: auto;
+        margin-top: 0!important;
+        width: auto;
+        min-width: 150px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5)
+    }
+
+    #navDemo .w3-bar-item {
+        padding: 8px 16px!important;
+        font-size: 13px;
+        text-align: right
     }
 }
 
@@ -2052,6 +2081,18 @@ a {
     .w3-padding-64 {
         padding-top: 56px!important;
         padding-bottom: 32px!important
+    }
+
+    .author-card {
+        margin-bottom: 0
+    }
+
+    #resiliente {
+        padding-bottom: 4px!important
+    }
+
+    #resiliente + #discografia {
+        padding-top: 16px!important
     }
 }
 
