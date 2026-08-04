@@ -1711,6 +1711,17 @@ a {
     border-radius: 2px;
 }
 
+/* Mobile: smaller language switcher flags */
+@media (max-width: 600px) {
+    .lang-switcher-mobile a svg {
+        width: 18px;
+        height: 12px;
+    }
+    .lang-switcher-mobile a {
+        padding: 2px 2px !important;
+    }
+}
+
 .w3-text-red,.w3-hover-text-red:hover {
     color: #f44336!important
 }
