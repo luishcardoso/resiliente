@@ -1,0 +1,41 @@
+biografia-en.html
+  s_3de78aa7c22c8d::t_5a74da346c4072 60,79,122-124,205-212
+biografia-es.html
+  s_3de78aa7c22c8d::t_6895a1f1e9e54c 60,79,122-124,205-212
+biografia.html
+  s_3de78aa7c22c8d::t_9727bfe87eedd1 60,79,122-124,205-212
+discografia-en.html
+  s_3de78aa7c22c8d::t_fc24879fe35ae3 60,79,122-124,194-201
+discografia-es.html
+  s_3de78aa7c22c8d::t_f95f0cc2a2ef60 60,79,122-124,194-201
+discografia.html
+  s_3de78aa7c22c8d::t_04db04ade11dfb 60,79,122-124,194-201
+index-en.html
+  s_3de78aa7c22c8d::t_f925d1e98ee75c 60,79,122-124,237-244
+index-es.html
+  s_3de78aa7c22c8d::t_04a540fcfe4b5b 60,79,122-124,237-244
+index.html
+  s_3de78aa7c22c8d::t_f26621d868e88b 60,79,122-124,237-244
+loja-en.html
+  s_3de78aa7c22c8d::t_67a64101b03726 94,113,156-158,205-212
+loja-es.html
+  s_3de78aa7c22c8d::t_eec08082111045 94,113,156-158,205-212
+loja.html
+  s_3de78aa7c22c8d::t_6b79f2c56596b6 94,113,156-158,205-212
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "d71204f16012b1ce629332426f4f56ed8f7ae46e",
+  "prompts": {},
+  "sessions": {
+    "s_3de78aa7c22c8d": {
+      "agent_id": {
+        "tool": "windsurf",
+        "id": "scythe-deposit",
+        "model": "unknown"
+      },
+      "human_author": "lcardoso <lcardoso@cloudflare.com>"
+    }
+  }
+}
