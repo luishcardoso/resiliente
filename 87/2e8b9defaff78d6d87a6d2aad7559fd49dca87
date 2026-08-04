@@ -1,0 +1,41 @@
+biografia-en.html
+  s_3de78aa7c22c8d::t_33af59557d59cf 111
+biografia-es.html
+  s_3de78aa7c22c8d::t_584d784a687989 111
+biografia.html
+  s_3de78aa7c22c8d::t_6ba41343fb0b49 111
+discografia-en.html
+  s_3de78aa7c22c8d::t_681c55e5291307 111
+discografia-es.html
+  s_3de78aa7c22c8d::t_093db4cd3d55d2 111
+discografia.html
+  s_3de78aa7c22c8d::t_1e1958a9c71a5c 111
+index-en.html
+  s_3de78aa7c22c8d::t_951f5386c57f02 111
+index-es.html
+  s_3de78aa7c22c8d::t_b6c3e8def3349a 111
+index.html
+  s_3de78aa7c22c8d::t_afb308474de915 111
+loja-en.html
+  s_3de78aa7c22c8d::t_ee0e15c7f441c4 145
+loja-es.html
+  s_3de78aa7c22c8d::t_134fd7b6f6c1fa 145
+loja.html
+  s_3de78aa7c22c8d::t_4b4c86138c0acf 145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "872e8b9defaff78d6d87a6d2aad7559fd49dca87",
+  "prompts": {},
+  "sessions": {
+    "s_3de78aa7c22c8d": {
+      "agent_id": {
+        "tool": "windsurf",
+        "id": "scythe-deposit",
+        "model": "unknown"
+      },
+      "human_author": "lcardoso <lcardoso@cloudflare.com>"
+    }
+  }
+}
