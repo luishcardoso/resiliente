@@ -526,6 +526,21 @@ a {
     padding: 8px 6px!important
 }
 
+/* Mobile: reduce social icon padding to fit all icons */
+@media (max-width: 600px) {
+    .nav-social-icons {
+        gap: 0;
+    }
+    .nav-social-icons a {
+        padding: 8px 3px!important;
+        font-size: 14px;
+    }
+    .nav-social-icons a svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+
 .w3-center .w3-bar {
     display: inline-block;
     width: auto
@@ -1661,12 +1676,12 @@ a {
     border-radius: 2px;
 }
 
-/* Language Switcher - Mobile (top-left of navbar) */
+/* Language Switcher - Mobile (right side of navbar) */
 .lang-switcher-mobile {
     display: flex;
     align-items: center;
     gap: 2px;
-    float: left;
+    float: right;
     padding: 0 8px;
     height: 46px;
 }
