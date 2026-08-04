@@ -526,18 +526,18 @@ a {
     padding: 8px 6px!important
 }
 
-/* Mobile: reduce social icon padding to fit all icons */
+/* Mobile: social icons slightly bigger */
 @media (max-width: 600px) {
     .nav-social-icons {
-        gap: 0;
+        gap: 2px;
     }
     .nav-social-icons a {
-        padding: 8px 3px!important;
-        font-size: 14px;
+        padding: 8px 5px!important;
+        font-size: 18px;
     }
     .nav-social-icons a svg {
-        width: 12px;
-        height: 12px;
+        width: 16px;
+        height: 16px;
     }
 }
 
@@ -2107,12 +2107,12 @@ a {
         margin: 0 8px
     }
 
-    /* Compact mobile dropdown menu, anchored to the top-right under the hamburger button */
+    /* Compact mobile dropdown menu, anchored to the top-left under the hamburger button */
     #navDemo {
         position: absolute;
         top: 46px!important;
-        right: 8px;
-        left: auto;
+        left: 8px;
+        right: auto;
         margin-top: 0!important;
         width: auto;
         min-width: 150px;
@@ -2124,7 +2124,7 @@ a {
     #navDemo .w3-bar-item {
         padding: 8px 16px!important;
         font-size: 13px;
-        text-align: right
+        text-align: left
     }
 }
 
