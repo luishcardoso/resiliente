@@ -2109,12 +2109,12 @@ a {
 
     /* Compact mobile dropdown menu, anchored to the top-left under the hamburger button */
     #navDemo {
-        position: absolute;
+        position: absolute!important;
         top: 46px!important;
-        left: 8px;
-        right: auto;
+        left: 8px!important;
+        right: auto!important;
         margin-top: 0!important;
-        width: auto;
+        width: auto!important;
         min-width: 150px;
         border-radius: 8px;
         overflow: hidden;
