@@ -2200,6 +2200,50 @@ a {
     text-decoration: underline;
 }
 
+/* ========================================
+   ORIENTATION FIX - Keep navbar layout consistent
+   in both portrait and landscape on phones
+   ======================================== */
+
+@media (orientation: landscape) and (max-height: 520px) {
+    /* Show hamburger button and mobile lang switcher */
+    .lang-switcher-mobile {
+        display: flex !important;
+    }
+    .w3-bar > .w3-button[aria-controls="navDemo"] {
+        display: inline-block !important;
+    }
+    /* Hide desktop nav links and desktop lang switcher */
+    .w3-bar > .nav-link {
+        display: none !important;
+    }
+    .lang-switcher {
+        display: none !important;
+    }
+    /* Ensure dropdown can toggle (override w3-hide-medium) */
+    #navDemo.w3-show {
+        display: block !important;
+    }
+    /* Compact dropdown menu positioning */
+    #navDemo {
+        position: absolute !important;
+        top: 46px !important;
+        left: 8px !important;
+        right: auto !important;
+        margin-top: 0 !important;
+        width: auto !important;
+        min-width: 150px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5)
+    }
+    #navDemo .w3-bar-item {
+        padding: 8px 16px !important;
+        font-size: 13px;
+        text-align: left
+    }
+}
+
 /* Blockquote styling */
 blockquote {
     margin: 1.5em 0;
