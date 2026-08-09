@@ -42,15 +42,11 @@
       color: #f5f5f5 !important;
     }
 
-    /* Hero video container - Sepultura style */
+    /* Hero video container - full width */
     .video-hero {
       position: relative;
       width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
       overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
 
     .video-hero video {
@@ -58,26 +54,6 @@
       height: auto;
       display: block;
       object-fit: cover;
-    }
-
-    /* Video overlay gradient */
-    .video-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: linear-gradient(to top, rgba(18, 18, 18, 0.8), transparent);
-      pointer-events: none;
-    }
-
-    /* Responsive video */
-    @media (max-width: 600px) {
-      .video-hero {
-        border-radius: 0;
-        max-width: 100%;
-      }
     }
   </style>
 </head>
@@ -170,8 +146,8 @@
 </header>
 
 <main>
-  <section id="loja" class="w3-container w3-content w3-center w3-padding-64 responsive-content" aria-labelledby="loja-heading">
-    <a href="index.html">
+  <section id="loja" class="w3-center" style="padding-top: 80px" aria-labelledby="loja-heading">
+    <a href="index.html" style="display: inline-block; padding: 16px">
       <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/EP1_logo.png" 
            alt="Logo da banda Resiliente" 
            class="header-logo">
