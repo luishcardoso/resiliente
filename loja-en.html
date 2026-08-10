@@ -68,6 +68,15 @@
       position: relative;
       z-index: 3;
     }
+
+    /* Mobile: navbar is shorter, account for footer */
+    @media (max-width: 600px) {
+      .video-hero {
+        top: 48px;
+        height: calc(100vh - 48px - 48px);
+        bottom: 48px;
+      }
+    }
   </style>
 </head>
 <body>
