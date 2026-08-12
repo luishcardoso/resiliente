@@ -75,6 +75,132 @@
       width: 100%;
       z-index: 3;
     }
+
+    /* Carousel Styles */
+    .carousel-container {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 60px;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .carousel-slide img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-btn.prev { left: 5px; }
+    .carousel-btn.next { right: 5px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 1.5rem;
+    }
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-dot.active {
+      background: #fff;
+      transform: scale(1.2);
+    }
+
+    .carousel-dot:hover { background: rgba(255, 255, 255, 0.6); }
+
+    .carousel-loading {
+      text-align: center;
+      padding: 3rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .carousel-loading .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .carousel-empty {
+      text-align: center;
+      padding: 3rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .carousel-counter {
+      text-align: center;
+      margin-top: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-container { padding: 0 40px; margin: 1rem auto; }
+      .carousel-btn { width: 40px; height: 40px; font-size: 18px; }
+      .carousel-slide img { max-height: 50vh; }
+    }
   </style>
 </head>
 <body>
@@ -182,6 +308,25 @@
       </a>
 
       <h1 id="loja-heading" class="visually-hidden">Store</h1>
+
+      <!-- Image Carousel -->
+      <div class="carousel-container">
+        <div class="carousel" id="carousel">
+          <div class="carousel-loading" id="carouselLoading">
+            <div class="spinner"></div>
+            <p>Loading images...</p>
+          </div>
+          <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous image" style="display: none;">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Next image" style="display: none;">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="carousel-counter" id="carouselCounter"></div>
+      </div>
     </div>
   </section>
 </main>
@@ -204,6 +349,86 @@ function toggleNav() {
   const parts = ['resiliente', '.', 'banda', '.', 'br', '@', 'gmail', '.', 'com'];
   const email = parts.join('');
   document.getElementById('emailIcon').href = 'mailto:' + email;
+})();
+</script>
+
+<script>
+(function() {
+  const track = document.getElementById('carouselTrack');
+  const loading = document.getElementById('carouselLoading');
+  const dotsContainer = document.getElementById('carouselDots');
+  const counter = document.getElementById('carouselCounter');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  
+  let currentIndex = 0;
+  let images = [];
+  let autoPlayInterval;
+
+  async function loadImages() {
+    try {
+      const response = await fetch('/api/loja-images');
+      const data = await response.json();
+      if (data.error) throw new Error(data.error);
+      images = data.images || [];
+      if (images.length === 0) {
+        loading.innerHTML = '<div class="carousel-empty"><p>No images available</p></div>';
+        return;
+      }
+      renderCarousel();
+    } catch (error) {
+      console.error('Error loading images:', error);
+      loading.innerHTML = '<div class="carousel-empty"><p>Error loading images</p></div>';
+    }
+  }
+
+  function renderCarousel() {
+    loading.style.display = 'none';
+    track.innerHTML = images.map((img, i) => `
+      <div class="carousel-slide">
+        <img src="${img.url}" alt="${img.name}" loading="${i === 0 ? 'eager' : 'lazy'}">
+      </div>
+    `).join('');
+    dotsContainer.innerHTML = images.map((_, i) => `
+      <button class="carousel-dot ${i === 0 ? 'active' : ''}" data-index="${i}" aria-label="Go to image ${i + 1}"></button>
+    `).join('');
+    if (images.length > 1) { prevBtn.style.display = 'flex'; nextBtn.style.display = 'flex'; }
+    updateCounter();
+    dotsContainer.querySelectorAll('.carousel-dot').forEach(dot => {
+      dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.index)));
+    });
+    startAutoPlay();
+  }
+
+  function goToSlide(index) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+    currentIndex = index;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+    updateCounter();
+    resetAutoPlay();
+  }
+
+  function updateCounter() { counter.textContent = `${currentIndex + 1} / ${images.length}`; }
+  function nextSlide() { goToSlide(currentIndex + 1); }
+  function prevSlide() { goToSlide(currentIndex - 1); }
+  function startAutoPlay() { autoPlayInterval = setInterval(nextSlide, 5000); }
+  function resetAutoPlay() { clearInterval(autoPlayInterval); startAutoPlay(); }
+
+  prevBtn.addEventListener('click', prevSlide);
+  nextBtn.addEventListener('click', nextSlide);
+  document.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') prevSlide(); if (e.key === 'ArrowRight') nextSlide(); });
+
+  let touchStartX = 0, touchEndX = 0;
+  track.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  track.addEventListener('touchend', (e) => { touchEndX = e.changedTouches[0].screenX; const diff = touchStartX - touchEndX; if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); } }, { passive: true });
+
+  const carousel = document.getElementById('carousel');
+  carousel.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+  carousel.addEventListener('mouseleave', startAutoPlay);
+
+  loadImages();
 })();
 </script>
 
