@@ -2668,6 +2668,16 @@ section[aria-labelledby="biografia-heading"] p {
     height: clamp(100px, 28vw, 260px) !important;
 }
 
+/* Author card names - always one line, responsive sizing */
+.authors-row .author-card h3 {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-size: clamp(10px, 3vw, 16px) !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+}
+
 /* Very small screens - ensure cards fit */
 @media (max-width: 340px) {
     .authors-row {
@@ -2684,7 +2694,25 @@ section[aria-labelledby="biografia-heading"] p {
     }
     
     .authors-row .author-card h3 {
+        font-size: 10px !important;
+    }
+}
+
+@media (min-width: 341px) and (max-width: 400px) {
+    .authors-row .author-card h3 {
         font-size: 11px !important;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 500px) {
+    .authors-row .author-card h3 {
+        font-size: 13px !important;
+    }
+}
+
+@media (min-width: 501px) {
+    .authors-row .author-card h3 {
+        font-size: 16px !important;
     }
 }
 
