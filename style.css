@@ -2317,24 +2317,21 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure all content respects viewport width */
-*, *::before, *::after {
-    max-width: 100%;
-}
-
-img, video, iframe {
+/* Ensure main content images/media respect viewport width */
+main img, main video, main iframe,
+section img, section video, section iframe {
     max-width: 100%;
     height: auto;
 }
 
-/* Improved content container with safe area support */
+/* Improved content container */
 .responsive-content {
     max-width: 800px;
     width: calc(100% - 32px);
     margin-left: auto;
     margin-right: auto;
-    padding-left: env(safe-area-inset-left, 16px);
-    padding-right: env(safe-area-inset-right, 16px);
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 /* Paragraph text - fluid and readable */
@@ -2619,20 +2616,18 @@ section[id] {
 
 /* ========================================
    SAFE AREA INSETS (for notched devices)
+   Only apply to content, not navbar
    ======================================== */
 
 @supports (padding: env(safe-area-inset-bottom)) {
-    body {
-        padding-left: env(safe-area-inset-left);
-        padding-right: env(safe-area-inset-right);
-    }
-    
     footer {
         padding-bottom: calc(16px + env(safe-area-inset-bottom)) !important;
     }
     
-    .w3-top {
-        padding-top: env(safe-area-inset-top);
+    /* Content areas respect safe areas */
+    .responsive-content {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
     }
 }
 
@@ -2648,32 +2643,48 @@ section[aria-labelledby="biografia-heading"] p {
     overflow-wrap: break-word;
 }
 
-/* Authors row - responsive flexbox */
+/* Authors row - ALWAYS side by side on ALL devices */
 .authors-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
     align-items: flex-start;
-    gap: clamp(8px, 3vw, 24px);
-    margin-bottom: clamp(16px, 4vw, 32px);
+    gap: clamp(6px, 2vw, 24px);
+    margin-bottom: clamp(12px, 3vw, 32px);
 }
 
 .authors-row .author-card {
-    flex: 0 1 auto;
+    flex: 0 0 auto !important;
     min-width: 0;
-    width: auto;
+    width: auto !important;
+    max-width: 45% !important;
+    float: none !important;
 }
 
-/* Prevent author cards from overflowing on small screens */
+/* Author images scale based on viewport to always fit side by side */
+.authors-row .author-img-square {
+    width: clamp(100px, 28vw, 260px) !important;
+    height: clamp(100px, 28vw, 260px) !important;
+}
+
+/* Very small screens - ensure cards fit */
 @media (max-width: 340px) {
     .authors-row {
-        flex-direction: column;
-        align-items: center;
+        gap: 4px !important;
     }
     
-    .author-img-square {
-        width: 140px;
-        height: 140px;
+    .authors-row .author-card {
+        padding: 4px !important;
+    }
+    
+    .authors-row .author-img-square {
+        width: 95px !important;
+        height: 95px !important;
+    }
+    
+    .authors-row .author-card h3 {
+        font-size: 11px !important;
     }
 }
 
@@ -2688,8 +2699,8 @@ p, blockquote {
     margin-right: auto;
 }
 
-/* Links - ensure visibility */
-a {
+/* Links in content - ensure visibility */
+main a, section a, .responsive-content a {
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
@@ -2701,18 +2712,88 @@ strong {
 
 /* ========================================
    TOUCH TARGETS (Accessibility)
+   Only for main content, not navbar or carousel
    ======================================== */
 
 @media (pointer: coarse) {
-    a, button, .w3-button, .w3-bar-item {
+    main a:not(.carousel-container a), 
+    main button:not(.carousel-btn):not(.carousel-dot),
+    section a:not(.carousel-container a), 
+    section button:not(.carousel-btn):not(.carousel-dot) {
         min-height: 44px;
-        min-width: 44px;
+    }
+}
+
+/* ========================================
+   CAROUSEL PROTECTION
+   Ensure carousel styles are not overridden
+   ======================================== */
+
+/* Carousel images should use their own sizing */
+.carousel-slide img {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 70vh !important;
+}
+
+/* Carousel buttons maintain their size */
+.carousel-btn {
+    min-height: auto !important;
+    min-width: auto !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.carousel-dot {
+    min-height: auto !important;
+    min-width: auto !important;
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* Carousel container responsive adjustments */
+@media (max-width: 600px) {
+    .carousel-container {
+        padding: 0 40px !important;
+        margin: 1rem auto !important;
     }
     
-    .nav-social-icons a {
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+    .carousel-btn {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 18px !important;
+    }
+    
+    .carousel-slide img {
+        max-height: 50vh !important;
+    }
+    
+    .carousel-slide {
+        padding: 12px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .carousel-container {
+        padding: 0 35px !important;
+    }
+    
+    .carousel-btn {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 16px !important;
+    }
+    
+    .carousel-slide img {
+        max-height: 45vh !important;
+    }
+    
+    .carousel-dots {
+        gap: 8px !important;
+    }
+    
+    .carousel-dot {
+        width: 10px !important;
+        height: 10px !important;
     }
 }
