@@ -2296,3 +2296,423 @@ blockquote {
     padding: 0;
     font-style: italic;
 }
+
+/* ========================================
+   ENHANCED RESPONSIVE DESIGN
+   Consistent display across all devices
+   ======================================== */
+
+/* Base responsive typography using clamp for fluid sizing */
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-size: clamp(15px, 2.5vw, 17px);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure all content respects viewport width */
+*, *::before, *::after {
+    max-width: 100%;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improved content container with safe area support */
+.responsive-content {
+    max-width: 800px;
+    width: calc(100% - 32px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: env(safe-area-inset-left, 16px);
+    padding-right: env(safe-area-inset-right, 16px);
+}
+
+/* Paragraph text - fluid and readable */
+p {
+    font-size: clamp(15px, 2.5vw, 17px);
+    line-height: 1.7;
+    margin-bottom: 1em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Justified text fix for narrow screens */
+.w3-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+@media (max-width: 480px) {
+    .w3-justify {
+        text-align: left;
+        hyphens: auto;
+    }
+}
+
+/* Section padding that accounts for fixed header */
+section[id] {
+    scroll-margin-top: 60px;
+}
+
+/* ========================================
+   DEVICE-SPECIFIC BREAKPOINTS
+   ======================================== */
+
+/* iPhone SE, iPhone 8, small phones (320-375px) */
+@media (max-width: 375px) {
+    .responsive-content {
+        width: calc(100% - 24px);
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    
+    p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    .author-img-square {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .authors-row {
+        gap: 8px;
+    }
+    
+    .author-card {
+        padding: 8px;
+    }
+    
+    .author-card h3 {
+        font-size: 13px;
+    }
+    
+    .header-logo {
+        max-width: 160px;
+        margin-bottom: 16px;
+    }
+    
+    .w3-padding-64 {
+        padding-top: 52px !important;
+        padding-bottom: 24px !important;
+    }
+    
+    blockquote {
+        margin: 1em 0;
+        font-size: 14px;
+    }
+}
+
+/* iPhone 12/13/14, standard phones (376-414px) */
+@media (min-width: 376px) and (max-width: 414px) {
+    .responsive-content {
+        width: calc(100% - 28px);
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+    
+    p {
+        font-size: 15px;
+        line-height: 1.65;
+    }
+    
+    .author-img-square {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .authors-row {
+        gap: 10px;
+    }
+    
+    .header-logo {
+        max-width: 180px;
+        margin-bottom: 20px;
+    }
+    
+    .w3-padding-64 {
+        padding-top: 56px !important;
+        padding-bottom: 32px !important;
+    }
+}
+
+/* iPhone Plus/Max, large phones (415-480px) */
+@media (min-width: 415px) and (max-width: 480px) {
+    .responsive-content {
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    p {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+    
+    .author-img-square {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .header-logo {
+        max-width: 200px;
+        margin-bottom: 24px;
+    }
+}
+
+/* Small tablets, iPad Mini portrait (481-600px) */
+@media (min-width: 481px) and (max-width: 600px) {
+    .responsive-content {
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    
+    .author-img-square {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .header-logo {
+        max-width: 240px;
+    }
+}
+
+/* iPad portrait, small tablets (601-768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .responsive-content {
+        width: calc(100% - 48px);
+        max-width: 680px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
+    p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    
+    .author-img-square {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .authors-row {
+        gap: 20px;
+    }
+    
+    .header-logo {
+        max-width: 260px;
+    }
+    
+    .w3-padding-64 {
+        padding-top: 72px !important;
+        padding-bottom: 48px !important;
+    }
+}
+
+/* iPad landscape, larger tablets (769-1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .responsive-content {
+        width: calc(100% - 64px);
+        max-width: 760px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    
+    p {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+    
+    .author-img-square {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .authors-row {
+        gap: 24px;
+    }
+    
+    .header-logo {
+        max-width: 280px;
+    }
+}
+
+/* Desktop and large screens (1025px+) */
+@media (min-width: 1025px) {
+    .responsive-content {
+        width: 70%;
+        max-width: 800px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    
+    p {
+        font-size: 17px;
+        line-height: 1.7;
+    }
+    
+    .author-img-square {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .header-logo {
+        max-width: 340px;
+        margin-bottom: 32px;
+    }
+}
+
+/* ========================================
+   ORIENTATION HANDLING
+   ======================================== */
+
+/* Landscape on phones - reduce vertical spacing */
+@media (orientation: landscape) and (max-height: 500px) {
+    .w3-padding-64 {
+        padding-top: 52px !important;
+        padding-bottom: 24px !important;
+    }
+    
+    .header-logo {
+        max-width: 150px;
+        margin-bottom: 12px;
+    }
+    
+    .author-img-square {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .authors-row {
+        gap: 16px;
+    }
+    
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 0.75em;
+    }
+    
+    blockquote {
+        margin: 0.75em 0;
+    }
+}
+
+/* ========================================
+   SAFE AREA INSETS (for notched devices)
+   ======================================== */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+    
+    footer {
+        padding-bottom: calc(16px + env(safe-area-inset-bottom)) !important;
+    }
+    
+    .w3-top {
+        padding-top: env(safe-area-inset-top);
+    }
+}
+
+/* ========================================
+   BIOGRAPHY PAGE SPECIFIC FIXES
+   ======================================== */
+
+/* Ensure biography text is always readable */
+#biografia p,
+section[aria-labelledby="biografia-heading"] p {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Authors row - responsive flexbox */
+.authors-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(8px, 3vw, 24px);
+    margin-bottom: clamp(16px, 4vw, 32px);
+}
+
+.authors-row .author-card {
+    flex: 0 1 auto;
+    min-width: 0;
+    width: auto;
+}
+
+/* Prevent author cards from overflowing on small screens */
+@media (max-width: 340px) {
+    .authors-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .author-img-square {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* ========================================
+   TEXT READABILITY IMPROVEMENTS
+   ======================================== */
+
+/* Optimal line length for readability */
+p, blockquote {
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Links - ensure visibility */
+a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Strong/bold text */
+strong {
+    font-weight: 600;
+}
+
+/* ========================================
+   TOUCH TARGETS (Accessibility)
+   ======================================== */
+
+@media (pointer: coarse) {
+    a, button, .w3-button, .w3-bar-item {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .nav-social-icons a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
