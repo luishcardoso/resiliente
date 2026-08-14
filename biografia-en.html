@@ -45,6 +45,40 @@
       font-style: italic;
       color: #b0b0b0;
     }
+
+    /* Hero video - covers full viewport, navbar and footer sit on top */
+    .video-hero {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .video-hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header.w3-top {
+      z-index: 10;
+    }
+
+    .video-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 3;
+    }
   </style>
 </head>
 <body>
@@ -136,6 +170,14 @@
 </header>
 
 <main>
+  <div class="video-hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/flames.mp4" type="video/mp4">
+      Your browser does not support the video element.
+    </video>
+  </div>
+
+  <div class="video-content">
   <section id="biografia" class="w3-container w3-content w3-center w3-padding-64 responsive-content" aria-labelledby="biografia-heading">
     <a href="index-en.html">
       <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/resiliente2.png" 
@@ -186,6 +228,7 @@
       hope can always be cultivated.
     </p>
   </section>
+  </div>
 </main>
 
 <footer class="w3-container w3-padding-16 w3-center w3-black">
