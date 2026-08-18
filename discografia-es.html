@@ -79,6 +79,13 @@
       width: 100%;
       z-index: 3;
     }
+
+    /* TINC EP title - responsive font size to fit on one line */
+    .ep-title-tinc {
+      font-size: clamp(10px, 3.5vw, 16px);
+      white-space: nowrap;
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -187,18 +194,24 @@
 
     <h1 id="discografia-heading" class="visually-hidden">Discografía</h1>
 
-    <article class="author-card" style="display: block; margin: 0 auto 32px auto;">
+    <article class="author-card" style="display: block; margin: 0 auto 16px auto;">
       <a href="https://open.spotify.com/album/2tlqrFudDE1mjIurt43DaO?si=mYyB3otETry2ACk5BSXGHQ&utm_source=whatsapp" target="_blank" rel="noopener noreferrer">
         <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/TINC/Capa%20EP%203000x3000px%20-%20Resiliente%20-%20TINC.JPEG" 
              alt="EP This Is Not Catequese - Haz clic para escuchar" 
              class="responsive-img">
       </a>
-      <h3 class="w3-opacity" style="margin-top: 12px; white-space: nowrap;">
+      <h3 class="w3-opacity ep-title-tinc" style="margin-top: 12px;">
         <a href="https://open.spotify.com/album/2tlqrFudDE1mjIurt43DaO?si=mYyB3otETry2ACk5BSXGHQ&utm_source=whatsapp" target="_blank" rel="noopener noreferrer" class="text-link">ESCUCHA EL EP THIS IS NOT CATEQUESE</a>
       </h3>
     </article>
 
-    <article class="author-card" style="display: block; margin: 0 auto;">
+    <blockquote class="w3-opacity"><em>No vine aquí a pedir bendición, no voy a besar tu mano</em></blockquote>
+
+    <p class="w3-justify">
+      Este EP cuestiona dogmas hipócritas y el precio de la culpa.
+    </p>
+
+    <article class="author-card" style="display: block; margin: 32px auto 0 auto;">
       <a href="https://onerpm.link/623153449389" target="_blank" rel="noopener noreferrer">
         <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/EP1.webp" 
              alt="EP Resiliente - Haz clic para escuchar" 
