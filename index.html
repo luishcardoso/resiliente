@@ -79,6 +79,103 @@
       width: 100%;
       z-index: 3;
     }
+
+    /* EP Carousel */
+    .ep-carousel {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .ep-carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .ep-carousel-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .ep-carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      border: 2px solid #ddd;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .ep-carousel-slide img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+
+    .ep-carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border: none;
+      padding: 16px 12px;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 5;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .ep-carousel-nav:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .ep-carousel-nav.prev {
+      left: 10px;
+    }
+
+    .ep-carousel-nav.next {
+      right: 10px;
+    }
+
+    .ep-carousel-dots {
+      text-align: center;
+      margin-top: 16px;
+    }
+
+    .ep-carousel-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 6px;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .ep-carousel-dot.active {
+      background: #fff;
+    }
+
+    .ep-carousel-title {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .ep-carousel {
+        max-width: 90%;
+      }
+      .ep-carousel-nav {
+        padding: 12px 8px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -185,22 +282,31 @@
            class="header-logo">
     </a>
 
-    <p class="w3-justify">
-      <a href="https://instagram.com/resilientebanda" target="_blank" rel="noopener noreferrer" class="text-link"><strong>RESILIENTE</strong></a> 
-      é um projeto idealizado por 
-      <a href="https://instagram.com/augusto.haack" target="_blank" rel="noopener noreferrer" class="text-link"><strong>Augusto Haack</strong></a> e
-      <a href="https://instagram.com/nenizera" target="_blank" rel="noopener noreferrer" class="text-link"><strong>Luís Henrique Cardoso</strong></a> (nenizera) 
-      em 2017 no Vale dos Sinos/RS, Brasil. Dois amigos que se reuniram para produzir música autoral e independente. 
-      A banda nasceu da troca de ideias espontânea em longas noites de 
-      <a href="https://en.wikipedia.org/wiki/International_Superstar_Soccer_Deluxe" target="_blank" rel="noopener noreferrer" class="text-link"><strong>International Superstar Soccer Deluxe</strong></a> 
-      ao som de hardcore. Resiliente é a comunhão de sentimentos genuínos, experiências individuais e emoções universais. 
-      Suas músicas refletem principalmente sobre a condição humana, com autocrítica e empatia. 
-      Em sua sonoridade destaca-se o crossover entre ritmos brasileiros, hardcore e thrash metal. 
-      Após o lançamento do seu EP homônimo de estréia em 2025, a banda apresenta um som cru e intimista, 
-      caracterizado por riffs marcantes nas guitarras, breakdowns apocalípticos e vozes viscerais. 
-      Resiliente é um convite a reflexão e despertar individual; Um lembrete de que mesmo nos momentos mais difíceis de nossas vidas, 
-      a esperança pode ser sempre cultivada.
-    </p>
+    <div class="ep-carousel" id="epCarousel">
+      <div class="ep-carousel-track" id="epCarouselTrack">
+        <div class="ep-carousel-slide">
+          <a href="https://open.spotify.com/album/2tlqrFudDE1mjIurt43DaO?si=mYyB3otETry2ACk5BSXGHQ" target="_blank" rel="noopener noreferrer">
+            <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/TINC/Capa%20EP%203000x3000px%20-%20Resiliente%20-%20TINC.JPEG" 
+                 alt="EP This Is Not Catequese - Clique para ouvir">
+          </a>
+        </div>
+        <div class="ep-carousel-slide">
+          <a href="https://onerpm.link/623153449389" target="_blank" rel="noopener noreferrer">
+            <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/EP1.webp" 
+                 alt="EP Resiliente - Clique para ouvir">
+          </a>
+        </div>
+      </div>
+      <button class="ep-carousel-nav prev" onclick="moveCarousel(-1)">&#10094;</button>
+      <button class="ep-carousel-nav next" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+    <div class="ep-carousel-dots">
+      <span class="ep-carousel-dot active" onclick="goToSlide(0)"></span>
+      <span class="ep-carousel-dot" onclick="goToSlide(1)"></span>
+    </div>
+    <div class="ep-carousel-title" id="epCarouselTitle">
+      <a href="https://open.spotify.com/album/2tlqrFudDE1mjIurt43DaO?si=mYyB3otETry2ACk5BSXGHQ" target="_blank" rel="noopener noreferrer" class="text-link">ESCUTE O EP THIS IS NOT CATEQUESE</a>
+    </div>
   </section>
   </div>
 </main>
@@ -216,6 +322,49 @@ function toggleNav() {
   const isExpanded = nav.classList.toggle("w3-show");
   button.setAttribute("aria-expanded", isExpanded);
 }
+
+// EP Carousel
+let currentSlide = 0;
+const epTitles = [
+  { text: 'ESCUTE O EP THIS IS NOT CATEQUESE', link: 'https://open.spotify.com/album/2tlqrFudDE1mjIurt43DaO?si=mYyB3otETry2ACk5BSXGHQ' },
+  { text: 'ESCUTE O EP RESILIENTE', link: 'https://onerpm.link/623153449389' }
+];
+
+function updateCarousel() {
+  const track = document.getElementById('epCarouselTrack');
+  const dots = document.querySelectorAll('.ep-carousel-dot');
+  const titleEl = document.getElementById('epCarouselTitle');
+  
+  if (track) {
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+  
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+  
+  if (titleEl && epTitles[currentSlide]) {
+    titleEl.innerHTML = `<a href="${epTitles[currentSlide].link}" target="_blank" rel="noopener noreferrer" class="text-link">${epTitles[currentSlide].text}</a>`;
+  }
+}
+
+function moveCarousel(direction) {
+  currentSlide += direction;
+  if (currentSlide < 0) currentSlide = 1;
+  if (currentSlide > 1) currentSlide = 0;
+  updateCarousel();
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
+
+// Auto-advance carousel every 5 seconds
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % 2;
+  updateCarousel();
+}, 5000);
 </script>
 
 <script>
