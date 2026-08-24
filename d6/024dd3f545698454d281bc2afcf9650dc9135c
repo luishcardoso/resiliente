@@ -1,0 +1,19 @@
+discografia.html
+  s_8f59d0e0789c96::t_07a3f778a929c2 87,89-90,94-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "d6024dd3f545698454d281bc2afcf9650dc9135c",
+  "prompts": {},
+  "sessions": {
+    "s_8f59d0e0789c96": {
+      "agent_id": {
+        "tool": "devin",
+        "id": "s_8f59d0e0789c96",
+        "model": "unknown"
+      },
+      "human_author": "lcardoso <lcardoso@cloudflare.com>"
+    }
+  }
+}
