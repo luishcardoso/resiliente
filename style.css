@@ -1950,8 +1950,8 @@ a {
     height: 1px;
     border: 0;
     margin: 32px auto 16px;
-    background: linear-gradient(90deg, transparent, #c0c0c0 20%, #e6e6e6 50%, #c0c0c0 80%, transparent);
-    box-shadow: 0 0 6px rgba(192, 192, 192, 0.35)
+    background: linear-gradient(90deg, transparent, #777 20%, #a0a0a0 50%, #777 80%, transparent);
+    box-shadow: 0 0 4px rgba(160, 160, 160, 0.15)
 }
 
 /* Authors row - always side by side */
