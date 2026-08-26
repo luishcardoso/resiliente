@@ -2725,6 +2725,33 @@ section[aria-labelledby="biografia-heading"] p {
     }
 }
 
+@media (max-width: 340px) {
+    #biografia .authors-row .author-card {
+        max-width: 48% !important;
+    }
+
+    #biografia .authors-row .author-img-square {
+        width: clamp(95px, 32vw, 108px) !important;
+        height: clamp(95px, 32vw, 108px) !important;
+    }
+}
+
+@media (min-width: 341px) and (max-width: 600px) {
+    #biografia .authors-row {
+        gap: clamp(4px, 2vw, 10px) !important;
+    }
+
+    #biografia .authors-row .author-card {
+        max-width: 48% !important;
+        padding: 8px !important;
+    }
+
+    #biografia .authors-row .author-img-square {
+        width: clamp(120px, 36vw, 200px) !important;
+        height: clamp(120px, 36vw, 200px) !important;
+    }
+}
+
 /* ========================================
    TEXT READABILITY IMPROVEMENTS
    ======================================== */
