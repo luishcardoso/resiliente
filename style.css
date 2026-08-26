@@ -1945,6 +1945,15 @@ a {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)
 }
 
+.ep-separator {
+    width: min(360px, 80%);
+    height: 1px;
+    border: 0;
+    margin: 32px auto 16px;
+    background: linear-gradient(90deg, transparent, #c0c0c0 20%, #e6e6e6 50%, #c0c0c0 80%, transparent);
+    box-shadow: 0 0 6px rgba(192, 192, 192, 0.35)
+}
+
 /* Authors row - always side by side */
 .authors-row {
     display: flex;
