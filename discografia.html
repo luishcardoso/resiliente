@@ -84,8 +84,17 @@
     /* TINC EP title - matches the homepage carousel title */
     .ep-title-tinc {
       text-align: center;
-      margin-top: 16px;
-      font-size: 16px;
+      margin: 16px auto 0;
+      max-width: 260px;
+      font-size: clamp(8px, 3vw, 13px);
+      white-space: nowrap;
+    }
+
+    @media (min-width: 993px) {
+      .ep-title-tinc {
+        max-width: 360px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
