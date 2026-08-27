@@ -1946,7 +1946,7 @@ a {
 }
 
 .ep-separator {
-    width: min(360px, 80%);
+    width: clamp(140px, 70vw, 360px);
     height: 1px;
     border: 0;
     margin: 32px auto 16px;
