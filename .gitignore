@@ -1,0 +1,5 @@
+node_modules/
+.wrangler/
+_worker.bundle
+.dev.vars*
+.env*

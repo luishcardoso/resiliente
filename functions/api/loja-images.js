@@ -15,7 +15,7 @@ export async function onRequest(context) {
       })
       .map(obj => ({
         key: obj.key,
-        url: `https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/${obj.key}`,
+        url: `https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/${obj.key.split('/').map(encodeURIComponent).join('/')}`,
         name: obj.key.replace('loja/', ''),
         size: obj.size,
         uploaded: obj.uploaded
