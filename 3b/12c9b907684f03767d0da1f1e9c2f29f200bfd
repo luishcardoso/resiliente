@@ -1,0 +1,21 @@
+package-lock.json
+  s_4a142c1659a062::t_2e25997f4f43b1 1-1587
+package.json
+  s_4a142c1659a062::t_8c5e39bbd69e6f 6-9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "3b12c9b907684f03767d0da1f1e9c2f29f200bfd",
+  "prompts": {},
+  "sessions": {
+    "s_4a142c1659a062": {
+      "agent_id": {
+        "tool": "windsurf",
+        "id": "cubic-flare",
+        "model": "unknown"
+      },
+      "human_author": "lcardoso <lcardoso@cloudflare.com>"
+    }
+  }
+}
