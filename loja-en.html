@@ -444,6 +444,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       action: 'order-contact',
       theme: 'dark',
       size: window.matchMedia('(max-width: 420px)').matches ? 'compact' : 'flexible',
+      appearance: 'interaction-only',
       language,
       callback: () => { submit.disabled = false; setStatus(''); },
       'expired-callback': () => { submit.disabled = true; },
