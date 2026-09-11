@@ -215,10 +215,10 @@
     .order-form-summary:focus-visible { outline: 2px solid #f5f5f5; outline-offset: 4px; }
     .order-form-section > p { margin: 0.75rem 0 1.5rem; color: rgba(255, 255, 255, 0.82); }
     .order-form { display: grid; gap: 1rem; }
-    .order-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .order-field { display: grid; gap: 0.4rem; }
+    .order-form-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; }
+    .order-field { display: grid; min-width: 0; gap: 0.4rem; }
     .order-field label { font-weight: 600; }
-    .order-field input, .order-field textarea { width: 100%; padding: 12px 14px; color: #f5f5f5; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.28); border-radius: 6px; }
+    .order-field input, .order-field textarea { box-sizing: border-box; width: 100%; min-width: 0; padding: 12px 14px; color: #f5f5f5; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.28); border-radius: 6px; }
     .order-field input:focus, .order-field textarea:focus { outline: 2px solid #f5f5f5; outline-offset: 2px; }
     .order-field textarea { min-height: 115px; resize: vertical; }
     .order-form button[type="submit"] { justify-self: start; min-width: 190px; padding: 12px 20px; color: #121212; background: #f5f5f5; border: 0; border-radius: 6px; font-weight: 700; cursor: pointer; }
