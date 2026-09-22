@@ -2861,3 +2861,130 @@ strong {
         height: 10px !important;
     }
 }
+
+body .video-content {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(68px, 9vh, 96px) max(16px, env(safe-area-inset-right)) clamp(76px, 10vh, 108px) max(16px, env(safe-area-inset-left));
+}
+
+#resiliente.responsive-content {
+    display: flex;
+    width: min(100%, 800px);
+    max-width: 800px;
+    min-width: 0;
+    margin: auto;
+    padding-top: 0 !important;
+    padding-right: clamp(12px, 3vw, 32px) !important;
+    padding-left: clamp(12px, 3vw, 32px) !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#resiliente > *,
+#resiliente > a,
+#resiliente > div {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#resiliente > a {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+#resiliente .header-logo {
+    width: clamp(160px, 42vw, 340px);
+    max-width: 100%;
+    margin: 0 auto clamp(16px, 3vw, 32px);
+}
+
+#resiliente p {
+    width: min(100%, 70ch);
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center !important;
+}
+
+#resiliente .ep-separator {
+    width: min(70vw, 360px);
+}
+
+#resiliente .ep-carousel {
+    width: clamp(210px, 72vw, 500px);
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#resiliente .ep-carousel-track,
+#resiliente .ep-carousel-slide,
+#resiliente .ep-carousel-slide a {
+    width: 100%;
+}
+
+#resiliente .ep-carousel-slide a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#resiliente .ep-carousel-slide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+#resiliente .ep-carousel-dots {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 12px);
+}
+
+#resiliente .ep-carousel-dot {
+    margin: 0;
+    flex: 0 0 auto;
+}
+
+#resiliente .ep-carousel-title {
+    width: min(100%, 36rem);
+    padding: 0 clamp(8px, 2vw, 16px);
+    font-size: clamp(13px, 2.5vw, 16px);
+    line-height: 1.4;
+    text-wrap: balance;
+}
+
+@media (orientation: landscape) and (max-height: 700px) {
+    body .video-content {
+        align-items: flex-start;
+        padding-top: 60px;
+        padding-bottom: 64px;
+    }
+
+    #resiliente .header-logo {
+        width: clamp(130px, 24vw, 220px);
+        margin-bottom: 12px;
+    }
+
+    #resiliente .ep-carousel {
+        width: clamp(190px, 48vh, 340px);
+    }
+
+    #resiliente .ep-carousel-dots,
+    #resiliente .ep-carousel-title {
+        margin-top: 10px;
+    }
+}
