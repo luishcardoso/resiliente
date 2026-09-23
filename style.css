@@ -2056,6 +2056,10 @@ a {
         padding-right: 12px
     }
 
+    #resiliente .resiliente-description {
+        text-align: justify
+    }
+
     .responsive-iframe {
         height: 500px
     }
