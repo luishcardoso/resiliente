@@ -70,6 +70,15 @@
       padding-bottom: calc(100px + env(safe-area-inset-bottom));
     }
 
+    .store-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .store-logo { order: 1; align-self: center; }
+    .store-carousel { order: 2; width: 100%; box-sizing: border-box; }
+    .store-form { order: 3; width: calc(100% - 32px); box-sizing: border-box; }
+
     footer {
       position: fixed;
       bottom: 0;
@@ -389,8 +398,8 @@
   </div>
 
   <section id="loja" class="w3-center" style="padding-top: 80px; min-height: 100vh;" aria-labelledby="loja-heading">
-    <div class="video-content">
-      <a href="index.html" style="display: inline-block; padding: 8px 16px 0 16px">
+    <div class="video-content store-content">
+      <a href="index.html" class="store-logo" style="display: inline-block; padding: 8px 16px 0 16px">
         <img src="https://pub-5e39d369540947e9b3c3f5a6a5dc72a5.r2.dev/resiliente2.png" 
              alt="Logo da banda Resiliente" 
              class="header-logo">
@@ -399,7 +408,7 @@
       <h1 id="loja-heading" class="visually-hidden">Loja</h1>
 
       <!-- Image Carousel -->
-      <div class="carousel-container" style="margin-top: 0.5rem;">
+      <div class="carousel-container store-carousel" style="margin-top: 0.5rem;">
         <div class="carousel" id="carousel" tabindex="0" aria-label="Galeria de produtos">
           <div class="carousel-loading" id="carouselLoading">
             <div class="spinner"></div>
@@ -417,7 +426,7 @@
         <div class="carousel-counter" id="carouselCounter"></div>
       </div>
 
-      <details class="order-form-section" id="orderDisclosure">
+      <details class="order-form-section store-form" id="orderDisclosure">
         <summary class="order-form-summary">Faça o teu pedido</summary>
         <p>Conte o que procuras e responderemos por e-mail.</p>
         <form class="order-form" id="orderForm" data-language="pt-BR">
