@@ -512,32 +512,59 @@ a {
 }
 
 /* Streaming icons centered in the navbar */
-.nav-social-icons {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+header.w3-top > .w3-bar {
     display: flex;
+    min-height: 46px;
     align-items: center;
-    gap: 2px
+    overflow: visible;
+}
+
+header.w3-top > .w3-bar .nav-link {
+    flex: 0 0 auto;
+}
+
+.nav-social-icons {
+    position: static;
+    display: flex;
+    min-width: 0;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    transform: none;
+    order: 2
+}
+
+.lang-switcher {
+    margin-left: 4px;
+    flex: 0 0 auto;
+    float: none;
+    order: 3
 }
 
 .nav-social-icons a {
-    padding: 8px 6px!important
+    display: inline-flex;
+    min-width: 28px;
+    min-height: 46px;
+    padding: 8px 6px!important;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto
 }
 
 /* Mobile: social icons slightly bigger */
 @media (max-width: 600px) {
     .nav-social-icons {
-        gap: 2px;
+        gap: 0;
     }
     .nav-social-icons a {
-        padding: 8px 5px!important;
-        font-size: 18px;
+        min-width: 27px;
+        padding: 8px 4px!important;
+        font-size: 17px;
     }
     .nav-social-icons a svg {
-        width: 16px;
-        height: 16px;
+        width: 15px;
+        height: 15px;
     }
 }
 
@@ -2303,6 +2330,102 @@ a {
     }
 }
 
+@media (max-width: 1100px) {
+    header.w3-top > .w3-bar {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        width: 100%;
+        min-width: 0;
+    }
+
+    header.w3-top > .w3-bar > .w3-button[aria-controls="navDemo"] {
+        display: inline-flex !important;
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 44px;
+        min-height: 46px;
+        padding: 8px 14px !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header.w3-top > .w3-bar > .nav-link,
+    header.w3-top > .w3-bar > .lang-switcher {
+        display: none !important;
+    }
+
+    header.w3-top > .w3-bar > .nav-social-icons {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    header.w3-top > .w3-bar > .lang-switcher-mobile {
+        display: flex !important;
+        grid-column: 3;
+        grid-row: 1;
+        min-width: 0;
+        height: 46px;
+        padding: 0 8px;
+        justify-content: flex-end;
+        float: none;
+    }
+
+    #navDemo {
+        position: absolute !important;
+        top: 46px !important;
+        left: max(8px, env(safe-area-inset-left)) !important;
+        right: auto !important;
+        width: min(220px, calc(100vw - 16px)) !important;
+        min-width: 0;
+        max-height: calc(100vh - 54px);
+        margin-top: 0 !important;
+        overflow-y: auto;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5)
+    }
+
+    #navDemo.w3-show {
+        display: block !important;
+    }
+
+    #navDemo .w3-bar-item {
+        padding: 10px 16px !important;
+        font-size: 14px;
+        text-align: left;
+    }
+}
+
+@media (max-width: 360px) {
+    header.w3-top > .w3-bar > .w3-button[aria-controls="navDemo"] {
+        min-width: 40px;
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+    }
+
+    header.w3-top > .w3-bar > .lang-switcher-mobile {
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+
+    .nav-social-icons a {
+        min-width: 24px;
+        padding-right: 3px !important;
+        padding-left: 3px !important;
+        font-size: 16px;
+    }
+
+    .order-form button[type="submit"] {
+        box-sizing: border-box !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100%;
+    }
+}
+
 /* Blockquote styling */
 blockquote {
     margin: 1.5em 0;
@@ -2328,6 +2451,27 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+main,
+section,
+article,
+.video-content,
+.responsive-content,
+.store-content,
+.carousel-container,
+.order-form-section {
+    min-width: 0;
+}
+
+.responsive-content h1,
+.responsive-content h2,
+.responsive-content h3,
+.responsive-content p,
+.responsive-content a,
+.order-form-section,
+.order-form-section * {
+    overflow-wrap: anywhere;
 }
 
 /* Ensure main content images/media respect viewport width */
