@@ -550,7 +550,17 @@ header.w3-top > .w3-bar .nav-link {
     padding: 8px 6px!important;
     align-items: center;
     justify-content: center;
-    flex: 0 0 auto
+    flex: 0 0 auto;
+    border-bottom: 0;
+    text-decoration: none!important
+}
+
+.nav-social-icons a:hover,
+.nav-social-icons a:focus,
+.nav-social-icons a:active,
+.nav-social-icons a:visited {
+    border-bottom: 0;
+    text-decoration: none!important
 }
 
 /* Mobile: social icons slightly bigger */
